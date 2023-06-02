@@ -18,4 +18,6 @@ FROM zi
 RUN mkdir /home/zi/sys-arch
 WORKDIR /home/zi/sys-arch
 COPY --chown=zi:zi . .
+RUN echo 'test' > /home/zi/password.txt
+RUN ansible-playbook --tags core local.yml --become-password-file /home/zi/password.txt
 CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
