@@ -1,0 +1,40 @@
+- name: Install Neovim
+  become: true
+  community.general.pacman:
+    name: neovim
+    state: present
+  tags:
+    - install
+    - neovim
+
+- name: Install LazyGit
+  become: true
+  community.general.pacman:
+    name: lazygit
+    state: present
+  tags:
+    - install
+    - neovim
+
+- name: Install RipGrep
+  become: true
+  community.general.pacman:
+    name: ripgrep
+    state: present
+  tags:
+    - install
+    - neovim
+
+- name: Install LazyVim
+  ansible.builtin.git:
+    repo: 'https://github.com/LazyVim/starter.git'
+    dest: "{{ home }}/.config/nvim"
+  tags:
+    - install
+    - neovim
+
+- name: Cleanup LazyVim
+  shell: "rm -rf {{ home }}/.config/nvim/.git"
+  tags:
+    - install
+    - neovim

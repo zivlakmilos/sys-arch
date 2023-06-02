@@ -1,0 +1,43 @@
+- name: Install System Packages 1 (base-devel, cmake, pkg-config)
+  become: true
+  community.general.pacman:
+    name: ["base-devel", "cmake", "pkg-config"]
+    state: present
+  tags:
+    - install
+    - core
+    - neovim
+
+- name: Install System Packages 2 (lua, unzip, libtool, gettext)
+  become: true
+  community.general.pacman:
+    name: [ "lua", "unzip", "libtool", "gettext"]
+    state: present
+  tags:
+    - install
+    - core
+    - neovim
+
+- name: Install System Packages 3 (the rest)
+  become: true
+  community.general.pacman:
+    name: [ "curl", "htop", "i3", "ccache", "dconf-editor", "clang", "rust" ]
+    state: present
+  tags:
+    - install
+    - core
+    - neovim
+
+- name: Download Paru
+  ansible.builtin.git:
+    repo: 'https://aur.archlinux.org/paru.git'
+    dest: "{{ home }}/paru"
+  tags:
+    - install
+    - core
+
+- name: Install Paru
+  shell: "cd {{ home }}/paru && makepkg -si --noconfirm"
+  tags:
+    - install
+    - core

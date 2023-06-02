@@ -1,0 +1,41 @@
+- hosts: localhost
+  collections:
+    - community.general
+  vars:
+    source_key: "./.ssh/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+
+    home: "{{ lookup('env', 'HOME') }}"
+    personal: "{{ lookup('env', 'HOME') }}/personal"
+    work: "{{ lookup('env', 'HOME') }}/work"
+    sensa: "{{ lookup('env', 'HOME') }}/work/sensa"
+    other: "{{ lookup('env', 'HOME') }}/other"
+    books: "{{ lookup('env', 'HOME') }}/books"
+    shcool: "{{ lookup('env', 'HOME') }}/school"
+    learn: "{{ lookup('env', 'HOME') }}/learn"
+    books: "{{ lookup('env', 'HOME') }}/projects"
+    cloud: "{{ lookup('env', 'HOME') }}/cloud"
+  pre_tasks:
+    - name: Update System
+      become: true
+      community.general.pacman:
+        update_cache: true
+        state: present
+      tags:
+        - install
+        - upgrade
+        - core
+        - neovim
+    - name: Upgrade System
+      become: true
+      community.general.pacman:
+        upgrade: true
+        state: present
+      tags:
+        - install
+        - upgrade
+        - core
+        - neovim
+  tasks:
+    - include: tasks/core-setup.yml
+    - include: tasks/neovim-setup.yml
