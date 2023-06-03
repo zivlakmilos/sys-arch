@@ -8,6 +8,24 @@
     - core
     - neovim
 
+- name: Download Paru
+  ansible.builtin.git:
+    repo: "https://aur.archlinux.org/paru.git"
+    dest: "{{ home }}/paru"
+  tags:
+    - install
+    - paru
+- name: Install Paru
+  shell: "cd {{ home }}/paru && makepkg -si --noconfirm"
+  tags:
+    - install
+    - paru
+- name: Cleanup Paru
+  shell: "rm -Rf {{ home }}/paru"
+  tags:
+    - install
+    - paru
+
 - name: Install System Packages 2 (lua, unzip, libtool, gettext)
   become: true
   community.general.pacman:
@@ -21,23 +39,48 @@
 - name: Install System Packages 3 (the rest)
   become: true
   community.general.pacman:
-    name: [ "curl", "htop", "i3", "ccache", "dconf-editor", "clang", "rust" ]
+    name: [ "curl", "htop", "ccache", "dconf-editor", "clang", "rust", "stow" ]
     state: present
   tags:
     - install
     - core
     - neovim
 
-- name: Download Paru
-  ansible.builtin.git:
-    repo: 'https://aur.archlinux.org/paru.git'
-    dest: "{{ home }}/paru"
+- name: Install System Packages 3 AUR (the rest)
+  become: true
+  community.general.pacman:
+    executable: "paru"
+    name: [ "ttf-hack-nerd", "ttf-sourcecodepro-nerd" ]
+    state: present
+  tags:
+    - install
+    - core
+    - neovim
+
+- name: Install WM (i3 + polybar + alactritty)
+  become: true
+  community.general.pacman:
+    name: [ "polybar", "htop", "dmenu", "alacritty", "feh" ]
+    state: present
   tags:
     - install
     - core
 
-- name: Install Paru
-  shell: "cd {{ home }}/paru && makepkg -si --noconfirm"
+- name: Install DM (ly)
+  become: true
+  community.general.pacman:
+    executable: "paru"
+    name: [ "ly" ]
+    state: present
+  tags:
+    - install
+    - core
+
+- name: Enable DM (ly)
+  become: true
+  ansible.builtin.systemd:
+    name: httpd
+    enabled: true
   tags:
     - install
     - core
