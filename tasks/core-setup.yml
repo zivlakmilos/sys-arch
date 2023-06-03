@@ -60,7 +60,7 @@
 - name: Install WM (i3 + polybar + alactritty)
   become: true
   community.general.pacman:
-    name: [ "polybar", "htop", "dmenu", "alacritty", "feh" ]
+    name: [ "i3-wm", "polybar", "htop", "dmenu", "alacritty", "feh" ]
     state: present
   tags:
     - install
