@@ -26,6 +26,7 @@
         - upgrade
         - core
         - neovim
+        - tmux
     - name: Upgrade System
       become: true
       community.general.pacman:
@@ -39,3 +40,4 @@
   tasks:
     - include: tasks/core-setup.yml
     - include: tasks/neovim-setup.yml
+    - include: tasks/tmux-setup.yml
