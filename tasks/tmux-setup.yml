@@ -1,0 +1,16 @@
+- name: Install Tmux
+  become: true
+  community.general.pacman:
+    name: [ "tmux"]
+    state: present
+  tags:
+    - install
+    - tmux
+
+- name: Install TMP
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: "{{ home }}/.tmux/plugins/tpm"
+  tags:
+    - install
+    - tmux
