@@ -1,0 +1,29 @@
+- name: Install Stow
+  become: true
+  community.general.pacman:
+    name: ["stow" ]
+    state: present
+  tags:
+    - install
+    - core
+    - neovim
+
+- name: Cloning .dotfiles
+  ansible.builtin.git:
+    repo: "https://github.com/zivlakmilos/.dotfiles"
+    dest: "{{ home }}/.dotfiles"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - install
+    - dotfiles
+    - stow
+
+- name: Stow dotfiles
+  shell: cd $HOME/.dotfiles && stow */
+  tags:
+    - install
+    - dotfiles
+    - stow
