@@ -14,16 +14,19 @@
     dest: "{{ home }}/paru"
   tags:
     - install
+    - core
     - paru
 - name: Install Paru
   shell: "cd {{ home }}/paru && makepkg -si --noconfirm"
   tags:
     - install
+    - core
     - paru
 - name: Cleanup Paru
   shell: "rm -Rf {{ home }}/paru"
   tags:
     - install
+    - core
     - paru
 
 - name: Install System Packages 2 (lua, unzip, libtool, gettext)
