@@ -37,7 +37,9 @@
         - upgrade
         - core
         - neovim
+        - dotfiles
   tasks:
     - include: tasks/core-setup.yml
     - include: tasks/neovim-setup.yml
     - include: tasks/tmux-setup.yml
+    - include: tasks/dotfiles.yml
