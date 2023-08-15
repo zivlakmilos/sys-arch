@@ -5,8 +5,8 @@
     state: present
   tags:
     - install
-    - core
-    - neovim
+    - dotfiles
+    - stow
 
 - name: Cloning .dotfiles
   ansible.builtin.git:
