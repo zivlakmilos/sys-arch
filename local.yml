@@ -2,8 +2,8 @@
   collections:
     - community.general
   vars:
-    source_key: "./.ssh/id_rsa"
-    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+    source_key: "./ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
 
     home: "{{ lookup('env', 'HOME') }}"
     personal: "{{ lookup('env', 'HOME') }}/personal"
@@ -27,6 +27,7 @@
         - core
         - neovim
         - tmux
+        - dotfiles
     - name: Upgrade System
       become: true
       community.general.pacman:
@@ -37,11 +38,13 @@
         - upgrade
         - core
         - neovim
+        - tmux
         - dotfiles
   tasks:
     - include: tasks/core-setup.yml
     - include: tasks/neovim-setup.yml
     - include: tasks/zsh-setup.yml
     - include: tasks/tmux-setup.yml
+    - include: tasks/ssh-setup.yml
     - include: tasks/dotfiles.yml
     - include: tasks/software-setup.yml
