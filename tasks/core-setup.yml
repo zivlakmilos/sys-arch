@@ -82,7 +82,7 @@
 - name: Enable DM (ly)
   become: true
   ansible.builtin.systemd:
-    name: httpd
+    name: ly
     enabled: true
   tags:
     - install
