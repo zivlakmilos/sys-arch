@@ -48,4 +48,5 @@
     - include: tasks/ssh-setup.yml
     - include: tasks/dotfiles.yml
     - include: tasks/software-setup.yml
+    - include: tasks/node-setup.yml
     - include: tasks/personal-projects.yml
