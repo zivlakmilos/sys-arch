@@ -1,0 +1,33 @@
+- name: Install ZSH
+  become: true
+  community.general.pacman:
+    name: [ "zsh", "exa" ]
+    state: present
+  tags:
+    - install
+    - core
+    - zsh
+
+- name: Enable ZSH
+  become: true
+  shell: chsh -s $(which zsh)
+  tags:
+    - install
+    - core
+    - zsh
+
+- name: Oh-My-Zsh
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
+  tags:
+    - install
+    - core
+    - zsh
+
+- name: zsh-autosuggestions
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "{{ home }}/.oh-my-zsh/plugins/zsh-autosuggestions"
+  tags:
+    - install
+    - core
+    - zsh

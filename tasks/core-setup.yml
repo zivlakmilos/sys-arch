@@ -42,7 +42,7 @@
 - name: Install System Packages 3 (the rest)
   become: true
   community.general.pacman:
-    name: [ "curl", "htop", "ccache", "dconf-editor", "clang", "rust", "stow" ]
+    name: [ "curl", "htop", "ccache", "dconf-editor", "clang", "rust", "stow", "polkit" ]
     state: present
   tags:
     - install
@@ -63,7 +63,7 @@
 - name: Install WM (i3 + polybar + alactritty)
   become: true
   community.general.pacman:
-    name: [ "i3-wm", "i3lock", "polybar", "htop", "dmenu", "alacritty", "feh", "picom", "rofi", "rofi-calc", "rofi-emoji", "flameshot", "dunst" ]
+    name: [ "xorg", "i3-wm", "i3lock", "polybar", "htop", "dmenu", "alacritty", "feh", "picom", "rofi", "rofi-calc", "rofi-emoji", "flameshot", "dunst" ]
     state: present
   tags:
     - install
