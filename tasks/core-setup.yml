@@ -32,7 +32,7 @@
 - name: Install System Packages 2 (lua, unzip, libtool, gettext)
   become: true
   community.general.pacman:
-    name: [ "lua", "unzip", "libtool", "gettext"]
+    name: [ "lua", "unzip", "libtool", "gettext" ]
     state: present
   tags:
     - install
