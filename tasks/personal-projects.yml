@@ -87,3 +87,12 @@
     - install
     - personal-projects
     - projects
+
+- name: Personal Projects (sinatajs-dashboard)
+  ansible.builtin.git:
+    repo: "git@gitlab.com:zi-solutions/pedagogical-notebook/mobile.git"
+    dest: "{{ personal }}/pedagogical-notebook"
+  tags:
+    - install
+    - personal-projects
+    - projects
