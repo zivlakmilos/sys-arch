@@ -1,7 +1,7 @@
 - name: Install ZSH
   become: true
   community.general.pacman:
-    name: [ "zsh", "exa", "neofetch" ]
+    name: [ "zsh", "exa", "neofetch", "xclip" ]
     state: present
   tags:
     - install
