@@ -1,8 +1,9 @@
 - name: Install Node JS Packages (nodejs, npm)
   become: true
   community.general.pacman:
-    name: [ "node", "npm" ]
+    name: [ "nodejs", "npm" ]
     state: present
   tags:
     - install
     - node
+    - mobile

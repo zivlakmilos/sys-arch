@@ -52,4 +52,5 @@
     - include: tasks/software-setup.yml
     - include: tasks/node-setup.yml
     - include: tasks/containers-setup.yml
+    - include: tasks/mobile-setup.yml
     - include: tasks/personal-projects.yml
