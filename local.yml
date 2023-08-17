@@ -5,6 +5,8 @@
     source_key: "./ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
 
+    user: "zi"
+
     home: "{{ lookup('env', 'HOME') }}"
     personal: "{{ lookup('env', 'HOME') }}/personal"
     work: "{{ lookup('env', 'HOME') }}/work"
@@ -49,4 +51,5 @@
     - include: tasks/dotfiles.yml
     - include: tasks/software-setup.yml
     - include: tasks/node-setup.yml
+    - include: tasks/containers-setup.yml
     - include: tasks/personal-projects.yml
