@@ -11,6 +11,9 @@
     personal: "{{ lookup('env', 'HOME') }}/personal"
     work: "{{ lookup('env', 'HOME') }}/work"
     sensa: "{{ lookup('env', 'HOME') }}/work/sensa"
+    notebooks: "{{ lookup('env', 'HOME') }}/notebooks"
+    tmp: "{{ lookup('env'), 'HOME' }}/tmp"
+
     other: "{{ lookup('env', 'HOME') }}/other"
     books: "{{ lookup('env', 'HOME') }}/books"
     shcool: "{{ lookup('env', 'HOME') }}/school"
@@ -54,3 +57,4 @@
     - include: tasks/containers-setup.yml
     - include: tasks/mobile-setup.yml
     - include: tasks/personal-projects.yml
+    - include: tasks/zk-notebooks.yml
