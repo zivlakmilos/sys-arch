@@ -24,7 +24,7 @@ sudo pacman -S docker
 sudo usermod -aG docker $USER
 
 # VMs
-sudo pacman -S qemu-full libvirt virt-manager virt-sysprep
+sudo pacman -S qemu-full libvirt virt-manager
 sudo usermod -a -G kvm $USER
 sudo usermod -a -G libvirt $USER
 sudo systemctl enable libvirtd.service
