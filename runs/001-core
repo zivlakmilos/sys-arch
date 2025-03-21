@@ -24,7 +24,7 @@ paru -S ly
 sudo systemctl enable ly
 
 # Audio
-sudo pacman -S alsa-utils pipewire qpwgraph carla pavucontrol
+sudo pacman -S alsa-utils pipewire pipewire-pulse qpwgraph carla pavucontrol pwvucontrol
 
 ## SSH
 sudo pacman -S openssh ansible-core
