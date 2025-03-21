@@ -2,7 +2,8 @@
 
 # Web
 sudo pacman -S firefox thunderbird telegram-desktop
-paru -S librewolf-bin google-chrome freetube-bin yewtube-git viber slack-desktop
+paru -S librewolf-bin google-chrome freetube-bin yewtube-git viber slack-desktop yt-dlp
+sudo pacman -S firefox thunderbird telegram-desktop
 
 # Graphic
 sudo pacman -S gimp
@@ -10,3 +11,7 @@ paru -S openboard
 
 # Time management
 paru -S timetrace-bin pomo
+
+# Multimedia
+sudo pacman -S obs-studio kdenlive
+paru -S spotify

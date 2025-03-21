@@ -13,7 +13,9 @@ rm -Rf {{ home }}/paru
 
 # Install packages
 sudo pacman -S lua unzip libtool gettext
-sudo pacman -S curl htop ccache dconf-editor clang stow polkit rust
+sudo pacman -S curl htop ccache dconf-editor clang stow polkit acpi
+sudo systemctl enable polkit
+sudo systemctl start polkit
 
 # Install paru packages
 paru -S ttf-hack-nerd ttf-sourcecodepro-nerd
@@ -24,7 +26,7 @@ paru -S ly
 sudo systemctl enable ly
 
 # Audio
-sudo pacman -S alsa-utils pipewire pipewire-pulse qpwgraph carla pavucontrol pwvucontrol
+sudo pacman -S alsa-utils pipewire pipewire-pulse qpwgraph carla pavucontrol
 
 ## SSH
 sudo pacman -S openssh ansible-core
