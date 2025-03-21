@@ -13,7 +13,7 @@ rm -Rf {{ home }}/paru
 
 # Install packages
 sudo pacman -S lua unzip libtool gettext
-sudo pacman -S curl, htop, ccache, dconf-editor, clang, stow, polkit, rust
+sudo pacman -S curl htop ccache dconf-editor clang stow polkit rust
 
 # Install paru packages
 paru -S ttf-hack-nerd ttf-sourcecodepro-nerd
