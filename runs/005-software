@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Web
+sudo pacman -S firefox thunderbird telegram-desktop
+paru -S librewolf-bin google-chrome freetube-bin yewtube-git viber slack-desktop
+
+# Graphic
+sudo pacman -S gimp
+paru -S openboard

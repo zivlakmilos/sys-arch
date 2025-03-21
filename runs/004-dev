@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# NeoVim
+sudo pacman -S neovim lazygit ripgrep
+
+# Tmux
+sudo pacman -S tmux
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tmp
+
+# C
+sudo pacman -S clang
+
+# Go
+sudo pacman -S go
+
+# Node
+sudo pacman -S nodejs npm
+
+# Android SDK
+paru -S android-sdk-cmdline-tools-latest android-sdk-platform-tools android-udev
+
+# Containers
+sudo pacman -S docker
+sudo usermod -aG docker $USER
+
+# VMs
+sudo pacman -S qemu-full libvirt virt-manager virt-sysprep
+sudo usermod -a -G kvm $USER
+sudo usermod -a -G libvirt $USER
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+
+# Networking
+sudo pacman -S tcpdump wireshark-qt
+sudo usermod -a -G wireshark $USER

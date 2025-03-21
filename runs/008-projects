@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Setup dirs
+mkdir -p $HOME/personal/
+mkdir -p $HOME/work/lyra/
+mkdir -p $HOME/work/hexagon/
+mkdir -p $HOME/work/other/
+mkdir -p $HOME/work/freelance/
+mkdir -p $HOME/work/cardmate/
+
+# Personal
+git clone git@github.com:zivlakmilos/ts-monkey-interpreter.git $HOME/personal/ts-monkey-interpreter
+git clone git@github.com:zivlakmilos/rstax.git $HOME/personal/rs-tax
+git clone git@gitlab.com:zi-solutions/pedagogical-notebook/mobile.git $HOME/personal/pedagogical-notebook
+
+# Work

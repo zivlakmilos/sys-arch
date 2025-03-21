@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+
+# Setup base system
+sudo pacman -Syuu
+sudo pacman -S base-devel cmake pkg-config
+
+# Setup paru
+git clone https://aur.archlinux.org/paru.git $HOME/paru
+cd $HOME/paru && makepkg -si --noconfirm
+rm -Rf {{ home }}/paru
+
+# Install packages
+sudo pacman -S lua unzip libtool gettext
+sudo pacman -S curl, htop, ccache, dconf-editor, clang, stow, polkit, rust
+
+# Install paru packages
+paru -S ttf-hack-nerd ttf-sourcecodepro-nerd
+
+# UI, i3 and terminal
+sudo pacman -S xorg i3-wm i3lock polybar htop dmenu alacritty feh picom rofi rofi-calc rofi-emoji flameshot dunst
+paru -S ly
+sudo systemctl enable ly
+
+# Audio
+sudo pacman -S alsa-utils pipewire qpwgraph carla pavucontrol
+
+## SSH
+sudo pacman -S openssh ansible-core
+mkdir $HOME/.ssh/
+cp $script_dir/../ssh/id_ed25519.pub $HOME/.ssh/
+cat $script_dir/../ssh/id_ed25519 | ansible-vault decrypt >$HOME/.ssh/id_ed25519
+cp $script_dir/../ssh/hexagon.pub $HOME/.ssh/
+cat $script_dir/../ssh/hexagon | ansible-vault decrypt >$HOME/.ssh/hexagon
+
+# Cron
+sudo pacman -S cronie
+sudo systemctl enable cronie
+sudo systemctl start cronie
+
+# TMP
+mkdir $HOME/tmp
+(
+  crontab -l
+  echo "@reboot rm -Rf $HOME/tmp/*"
+) | crontab -

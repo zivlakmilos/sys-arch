@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo pacman -S stow
+git clone https://github.com/zivlakmilos/.dotfiles $HOME/.dotfiles
+cd $HOME/.dotfiles && stow */
