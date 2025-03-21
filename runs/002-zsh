@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
+# zsh
 sudo pacman -S zsh exa neofetch xclip fzf
 sudo chsh -s /bin/zsh
 
+# oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh >$HOME/.oh-my-installer && chmod +x $HOME/.oh-my-installer && $HOME/.oh-my-installer
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+
+# tmux
+sudo pacman -S tmux
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tmp
+$HOME/.tmux/plugins/tpm/bin/install_plugins

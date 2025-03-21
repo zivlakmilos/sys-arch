@@ -3,10 +3,6 @@
 # NeoVim
 sudo pacman -S neovim lazygit ripgrep
 
-# Tmux
-sudo pacman -S tmux
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tmp
-
 # C
 sudo pacman -S clang
 
