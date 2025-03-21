@@ -2,5 +2,5 @@
 
 sudo pacman -S zk
 
-git clone git@github.com:zivlakmilos/zk-nootebook-personal.git $HOME/notebook/personal
+git clone git@github.com:zivlakmilos/zk-notebook-personal.git $HOME/notebook/personal
 git clone git@github.com:zivlakmilos/zk-nootebook-work.git $HOME/notebook/work
