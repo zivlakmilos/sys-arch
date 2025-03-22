@@ -15,3 +15,6 @@ paru -S timetrace-bin pomo
 # Multimedia
 sudo pacman -S obs-studio kdenlive
 paru -S spotify
+
+# Passwordss
+sudo pacman -S keepassxc
