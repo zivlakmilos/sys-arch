@@ -36,6 +36,10 @@ cat $script_dir/../ssh/id_ed25519 | ansible-vault decrypt >$HOME/.ssh/id_ed25519
 cp $script_dir/../ssh/hexagon.pub $HOME/.ssh/
 cat $script_dir/../ssh/hexagon | ansible-vault decrypt >$HOME/.ssh/hexagon
 
+# Peripherals
+sudo pacman -S bluez bluez-utils bluetui
+sudo pacman -S solaar
+
 # Cron
 sudo pacman -S cronie
 sudo systemctl enable cronie
