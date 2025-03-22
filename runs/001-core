@@ -38,6 +38,8 @@ cat $script_dir/../ssh/hexagon | ansible-vault decrypt >$HOME/.ssh/hexagon
 
 # Peripherals
 sudo pacman -S bluez bluez-utils bluetui
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
 sudo pacman -S solaar
 
 # Cron
