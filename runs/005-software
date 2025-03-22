@@ -10,7 +10,8 @@ sudo pacman -S gimp
 paru -S openboard
 
 # Time management
-paru -S timetrace-bin pomo
+paru -S timetrace-bin
+go install github.com/rwxrob/pomo/cmd/pomo@latest
 
 # Multimedia
 sudo pacman -S obs-studio kdenlive
