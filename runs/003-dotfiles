@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/zivlakmilos/.dotfiles $HOME/.dotfiles
+git clone git@github.com:zivlakmilos/.dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles && stow */
