@@ -32,7 +32,6 @@ sudo systemctl start libvirtd.service
 # Networking
 sudo pacman -S tcpdump wireshark-qt
 sudo usermod -a -G wireshark $USER
-sudo pacman -S openvpn openconnect
 
 # Other
 sudo pacman -S cloc
