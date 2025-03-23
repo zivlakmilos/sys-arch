@@ -7,7 +7,7 @@ sudo pacman -S neovim lazygit ripgrep
 sudo pacman -S clang
 sudo pacman -S gdb
 paru -S gf2
-sudo pacman -S libgtk3 libwebkit
+sudo pacman -S gtk3 webkit2gtk
 
 # Go
 sudo pacman -S go
