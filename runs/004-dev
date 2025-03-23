@@ -7,6 +7,7 @@ sudo pacman -S neovim lazygit ripgrep
 sudo pacman -S clang
 sudo pacman -S gdb
 paru -S gf2
+sudo pacman -S libgtk3 libwebkit
 
 # Go
 sudo pacman -S go
@@ -34,6 +35,10 @@ sudo systemctl start libvirtd.service
 # Networking
 sudo pacman -S tcpdump wireshark-qt
 sudo usermod -a -G wireshark $USER
+
+# Win
+sudo pacman -S mingw-w64-binutils mingw-w64-gcc mingw-w64-crt mingw-w64-headers mingw-w64-winpthreads
+paru -S nsis
 
 # Other
 sudo pacman -S cloc
