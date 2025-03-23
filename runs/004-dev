@@ -5,6 +5,8 @@ sudo pacman -S neovim lazygit ripgrep
 
 # C
 sudo pacman -S clang
+sudo pacman -S gdb
+paru -S gf2
 
 # Go
 sudo pacman -S go
