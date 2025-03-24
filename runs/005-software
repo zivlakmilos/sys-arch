@@ -18,7 +18,7 @@ sudo pacman -S obs-studio kdenlive
 paru -S spotify
 
 # Pdf
-sudo pacman -S zathura okular
+sudo pacman -S zathura zathura-pdf-mupdf okular
 
 # Passwordss
 sudo pacman -S keepassxc
