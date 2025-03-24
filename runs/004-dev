@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # NeoVim
-sudo pacman -S neovim lazygit ripgrep
+sudo pacman -S neovim lazygit ripgrep fd luarocks
 
 # C
 sudo pacman -S clang
