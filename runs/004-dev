@@ -42,4 +42,4 @@ paru -S nsis
 
 # Other
 sudo pacman -S cloc
-paru -S bruno
+paru -S bruno-bin
