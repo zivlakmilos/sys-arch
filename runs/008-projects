@@ -2,6 +2,8 @@
 
 # Setup dirs
 mkdir -p $HOME/personal/
+mkdir -p $HOME/school/
+mkdir -p $HOME/learning/
 mkdir -p $HOME/work/lyra/
 mkdir -p $HOME/work/hexagon/
 mkdir -p $HOME/work/other/
