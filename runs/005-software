@@ -17,5 +17,8 @@ go install github.com/rwxrob/pomo/cmd/pomo@latest
 sudo pacman -S obs-studio kdenlive
 paru -S spotify
 
+# Pdf
+sudo pacman -S zathura okular
+
 # Passwordss
 sudo pacman -S keepassxc
