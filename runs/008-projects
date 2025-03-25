@@ -16,5 +16,6 @@ git clone git@github.com:zivlakmilos/sys-arch.git $HOME/personal/sys-arch
 git clone git@github.com:zivlakmilos/ts-monkey-interpreter.git $HOME/personal/ts-monkey-interpreter
 git clone git@github.com:zivlakmilos/rstax.git $HOME/personal/rs-tax
 git clone git@github.com:zivlakmilos/educationalsp.git $HOME/personal/educationalsp
+git clone git@github.com:gophoria/gophoria.git $HOME/personal/gophoria
 
 # Work
