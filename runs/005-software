@@ -13,6 +13,9 @@ paru -S openboard
 paru -S timetrace-bin
 go install github.com/rwxrob/pomo/cmd/pomo@latest
 
+# Organization
+paru -S kanri-bin
+
 # Multimedia
 sudo pacman -S obs-studio kdenlive
 paru -S spotify
