@@ -25,3 +25,6 @@ sudo pacman -S zathura zathura-pdf-mupdf okular
 
 # Passwordss
 sudo pacman -S keepassxc
+
+# Docs
+sudo pacman -S pandoc
