@@ -18,5 +18,6 @@ git clone git@github.com:zivlakmilos/rstax.git $HOME/personal/rs-tax
 git clone git@github.com:zivlakmilos/educationalsp.git $HOME/personal/educationalsp
 git clone git@github.com:gophoria/gophoria.git $HOME/personal/gophoria
 git clone git@github.com:zivlakmilos/author.git $HOME/personal/author
+git clone git@github.com:zivlakmilos/perfin.git $HOME/personal/perfin
 
 # Work
