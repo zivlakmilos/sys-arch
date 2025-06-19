@@ -25,7 +25,7 @@ sudo pacman -S nodejs npm
 paru -S android-sdk-cmdline-tools-latest android-sdk-platform-tools android-udev
 
 # Containers
-sudo pacman -S docker
+sudo pacman -S docker docker-compose
 sudo usermod -aG docker $USER
 
 # VMs
