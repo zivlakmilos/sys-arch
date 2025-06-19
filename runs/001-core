@@ -13,7 +13,7 @@ rm -Rf {{ home }}/paru
 
 # Install packages
 sudo pacman -S lua unzip libtool gettext
-sudo pacman -S curl htop ccache dconf-editor clang stow polkit acpi rsync
+sudo pacman -S curl htop ccache dconf-editor clang stow polkit acpi rsync wget
 sudo systemctl enable polkit
 sudo systemctl start polkit
 
