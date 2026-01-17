@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # NeoVim
-sudo pacman -S neovim lazygit ripgrep fd luarocks
+sudo pacman -S neovim lazygit ripgrep fd luarocks tree-sitter-cli
 
 # C
 sudo pacman -S clang
