@@ -48,7 +48,7 @@ sudo systemctl enable cronie
 sudo systemctl start cronie
 
 # Netorks
-sudo openconnect vpn01.safe-mode.net
+sudo pacman -S openconnect
 
 # TMP
 mkdir $HOME/tmp
